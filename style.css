@@ -9,8 +9,87 @@
 
 :root{
     /* Colors primary */
-    --linear-gradient: hsl(236, 72%, 79%) to hsl(237, 63%, 64%);
+    --linear-gradient: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    --white: hsl(0, 0%, 100%);
     /* Colors neutral */
     --very-light-grayish-blue: hsl(240, 78%, 98%);
     --light-grayish-blue: hsl(234, 14%, 74%);--grayish-blue: hsl(233, 13%, 49%);--dark-grayish-blue: hsl(232, 13%, 33%);
+}
+
+header,main{
+    display: grid;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.row{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+#toggle{
+    display: none;
+}
+
+#toggle + label{
+    width: 40px;
+    height: 20px;
+    background-image: var(--linear-gradient);
+    border-radius: 20px;
+    position: relative;
+    cursor: pointer;
+    padding: 5px;
+    transition: all 0.3s ease-in;
+}
+
+#toggle + label::before{
+    content: '';
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: var(--white);
+    inset: 2px 22px;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+}
+
+main{
+    margin-top: 15%;
+}
+
+.card{
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+    background-color: var(--white);
+    box-shadow: 1px 2px 2px 2px var(--very-light-grayish-blue);
+    gap: 1rem;
+}
+
+.card h2{
+    display: flex;
+    align-items: center;
+    font-size: 3rem;
+}
+
+.card h2 span{
+    font-size: 1.5rem;
+}
+
+.card p{
+    font-weight: 600;
+    color: var(--grayish-blue);
+    border-top: 1px solid var(--light-grayish-blue);
+}
+
+button{
+    width: 100%;
+    border: none;
+    padding: 8px 0;
+    border-radius: 3px;
+    cursor: pointer;
+    color: var(--white);
+    background-image: var(--linear-gradient);
 }
