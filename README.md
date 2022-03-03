@@ -18,7 +18,7 @@ A aplicação está compatível para:
 
 ### Links
 
-- Solução do desafio: [Add solution URL here](https://your-solution-url.com)
+- Solução do desafio: [Pricing-Toggle-Master](https://matheus2004a.github.io/Pricing-Toggle-Master/)
 
 ## Tecnologias
 
