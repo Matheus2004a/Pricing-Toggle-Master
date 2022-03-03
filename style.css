@@ -33,10 +33,6 @@ header h1{
     color: var(--grayish-blue);
 }
 
-.card h2{
-    color: var(--dark-grayish-blue);
-}
-
 .row{
     display: flex;
     gap: 1rem;
@@ -107,9 +103,18 @@ a{
     font-weight: 700;
 }
 
-.card h2{
+.card > span{
     display: flex;
     align-items: center;
+    color: var(--dark-grayish-blue);
+}
+
+.card > span code{
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.card h2{
     font-size: 4rem;
 }
 
@@ -119,18 +124,13 @@ a{
     text-align: center;
 }
 
-.card h2 span{
-    font-size: 2rem;
-}
-
-.card span:not(h2 span){
+.card .box span{
     font-weight: 600;
     padding: 15px 0;
-    color: var(--grayish-blue);
     border-top: 1px solid var(--light-grayish-blue);
 }
 
-.card span:not(h2 span):nth-last-child(1){
+.card .box span:not(h2 span):nth-last-child(1){
     border-bottom: 1px solid var(--light-grayish-blue);
 }
 
