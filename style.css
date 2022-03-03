@@ -177,5 +177,27 @@ button:hover{
 
 footer{
     text-align: center;
-    margin-top: 5%;
+    margin: 5% 0 1%;
+}
+
+@media (min-width: 768px){
+    header{
+        margin: 5% 0;
+    }
+
+    main{
+        min-width: 85%;
+        width: 85%;
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        margin: 7% auto 0;
+    }
+
+    .card:nth-child(2){
+        width: 65%;
+        transform: scale(1.1);
+        padding: 2.5rem 2rem;
+        height: 80%;
+    }
 }
