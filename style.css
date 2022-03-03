@@ -12,20 +12,37 @@
     --linear-gradient: linear-gradient(to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%));
     --white: hsl(0, 0%, 100%);
     /* Colors neutral */
+    --purple: hsl(237, 63%, 64%);
     --very-light-grayish-blue: hsl(240, 78%, 98%);
     --light-grayish-blue: hsl(234, 14%, 74%);--grayish-blue: hsl(233, 13%, 49%);--dark-grayish-blue: hsl(232, 13%, 33%);
 }
 
-header,main{
+body{
+    background: url(./images/bg-top.svg) no-repeat top right var(--very-light-grayish-blue);
+}
+
+header{
     display: grid;
     justify-content: center;
+    place-items: center;
     gap: 1.5rem;
+    margin-top: 20%;
+}
+
+header h1{
+    color: var(--grayish-blue);
+}
+
+.card h2{
+    color: var(--dark-grayish-blue);
 }
 
 .row{
     display: flex;
     gap: 1rem;
     align-items: center;
+    color: var(--light-grayish-blue);
+    font-weight: 700;
 }
 
 #toggle{
@@ -33,8 +50,8 @@ header,main{
 }
 
 #toggle + label{
-    width: 40px;
-    height: 20px;
+    width: 45px;
+    height: 25px;
     background-image: var(--linear-gradient);
     border-radius: 20px;
     position: relative;
@@ -43,10 +60,14 @@ header,main{
     transition: all 0.3s ease-in;
 }
 
+#toggle + label:hover{
+    opacity: 0.7;
+}
+
 #toggle + label::before{
     content: '';
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     position: absolute;
     background-color: var(--white);
@@ -55,41 +76,106 @@ header,main{
     transition: all 0.3s ease-in;
 }
 
+#toggle:checked + label::before {
+    left: calc(100% - 90%);
+}
+
 main{
+    display: grid;
+    justify-items: center;
     margin-top: 15%;
+    gap: 2rem;
+}
+
+a{
+    text-decoration: none;
 }
 
 .card{
+    width: 85%;
     display: grid;
     place-items: center;
-    padding: 1rem;
+    padding: 1.5rem;
     background-color: var(--white);
-    box-shadow: 1px 2px 2px 2px var(--very-light-grayish-blue);
+    box-shadow: 2px 5px 40px 0 var(--light-grayish-blue);
     gap: 1rem;
+    border-radius: 7px;
+}
+
+.card p,.card .box span{
+    color: var(--grayish-blue);
+    font-weight: 700;
 }
 
 .card h2{
     display: flex;
     align-items: center;
-    font-size: 3rem;
+    font-size: 4rem;
+}
+
+.card .box{
+    width: 100%;
+    display: grid;
+    text-align: center;
 }
 
 .card h2 span{
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
-.card p{
+.card span:not(h2 span){
     font-weight: 600;
+    padding: 15px 0;
     color: var(--grayish-blue);
     border-top: 1px solid var(--light-grayish-blue);
+}
+
+.card span:not(h2 span):nth-last-child(1){
+    border-bottom: 1px solid var(--light-grayish-blue);
 }
 
 button{
     width: 100%;
     border: none;
-    padding: 8px 0;
-    border-radius: 3px;
+    padding: 10px 0;
+    border-radius: 5px;
     cursor: pointer;
     color: var(--white);
     background-image: var(--linear-gradient);
+    text-transform: uppercase;
+    margin-top: 5%;
+    outline: none;
+    font-weight: 600;
+    transition: all 0.5s ease-in-out;
+}
+
+button:hover{
+    background: transparent;
+    border: 1px solid var(--purple);
+    color: var(--purple);
+}
+
+/* Style card purple */
+.card:nth-child(2){
+    background-image: var(--linear-gradient);
+}
+
+.card:nth-child(2) :is(h2,p,span){
+    color: var(--white);
+}
+
+.card:nth-child(2) button{
+    background: var(--white);
+    color: var(--purple);
+}
+
+.card:nth-child(2) button:hover{
+    background: transparent;
+    border: 1px solid var(--white);
+    color: var(--white);
+}
+
+footer{
+    text-align: center;
+    margin-top: 5%;
 }
